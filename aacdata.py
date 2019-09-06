@@ -1,17 +1,20 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 import pandas as pd
 import re
 
 
-# In[ ]:
+# In[2]:
 
 
 def parse_gender(s):
+    '''
+    Pass in Sex upon Intake value from dataframe and will return age in months
+    '''
     # use regex to see if Male or Female is in the string and return that, ele return string
     if bool(re.search('Female', s)):
         return 'Female'
@@ -21,7 +24,32 @@ def parse_gender(s):
         return s
 
 
-# In[ ]:
+# In[3]:
+
+
+def parse_age(a):
+    '''
+    Pass in Age upon Intake or Age upon Outcome value from dataframe and will return age in months
+    '''
+    #split string and return age as months
+    age = a.split()
+    total_months = 0
+    if age[1] in('month', 'months'):
+        if int(age[0]) < 0:
+            total_months = 0
+        else:
+            total_months = int(age[0])
+    elif age[1] in('year', 'years'):
+        if int(age[0]) < 0:
+            total_months = 0
+        else:
+            total_months = int(int(age[0])*12)
+    elif age[1] in('week', 'weeks', 'day', 'days'):
+        total_months = 0
+    return total_months
+
+
+# In[4]:
 
 
 def clean_intake_data(filepath):
@@ -31,6 +59,7 @@ def clean_intake_data(filepath):
     
     - Parses Date Time into Intake Month and Intake Year columns
     - Parses Sex on Intake into Gender column (Male, Female, Unknown)
+    - Parses Age upon Intake into Intake Age in Months
     - Removed the following columns: MonthYear, Sex upon Intake
     '''
     
@@ -46,6 +75,9 @@ def clean_intake_data(filepath):
     # now create a new column with parsed gender or "unknown"
     df_intake['Gender'] = df_intake['Sex upon Intake'].apply(parse_gender)
     
+    # create column for age in months
+    df_intake['Intake Age in Months'] = df_intake['Age upon Intake'].apply(parse_age)
+    
     # drop columns we don't need
     drop_columns=['MonthYear', 'Sex upon Intake']
     df_intake.drop(columns=drop_columns, inplace=True)
@@ -54,7 +86,7 @@ def clean_intake_data(filepath):
     return df_intake
 
 
-# In[ ]:
+# In[9]:
 
 
 def clean_outcome_data(filepath):
@@ -71,14 +103,14 @@ def clean_outcome_data(filepath):
     df_outcome['Outcome Month'] = pd.DatetimeIndex(df_outcome['DateTime']).month
     df_outcome['Outcome Year'] = pd.DatetimeIndex(df_outcome['DateTime']).year
     
-     # drop columns we don't need
+    # drop columns we don't need
     drop_columns=['MonthYear', 'Date of Birth', 'Sex upon Outcome']
     df_outcome.drop(columns=drop_columns, inplace=True)
     
     return df_outcome
 
 
-# In[ ]:
+# In[6]:
 
 
 def find_duplicate_animals(df):   
@@ -90,7 +122,7 @@ def find_duplicate_animals(df):
     return df_result;
 
 
-# In[ ]:
+# In[7]:
 
 
 def remove_duplicate_animals(df):
@@ -102,7 +134,7 @@ def remove_duplicate_animals(df):
     return df_result;
 
 
-# In[1]:
+# In[8]:
 
 
 def combine_intake_outcome(df_intake, df_outcome):
@@ -118,10 +150,27 @@ def combine_intake_outcome(df_intake, df_outcome):
        - Age upon Outcome
        - Outcome Month
        - Outcome Year
+    - creates new columns:
+       - Date Intake (intake date formatted as Date)
+       - Date Outcome (intake date formatted as Date)
+       - Days in Center (Date Outcome - Date Intake)
     '''
     df_combined = pd.merge(df_intake, df_outcome[['Animal ID', 'DateTime', 'Outcome Type', 
                                                   'Outcome Subtype', 'Age upon Outcome', 'Outcome Month', 'Outcome Year']], 
                            how='inner', on='Animal ID', suffixes=(' Intake', ' Outcome'), copy=False)
+    
+    # add new fields to parse intake and outceom date as date
+    df_combined['Date Intake'] = pd.to_datetime(df_combined["DateTime Intake"]).dt.date
+    df_combined['Date Outcome'] = pd.to_datetime(df_combined["DateTime Outcome"]).dt.date
+    
+    # calc number of days in center
+    df_combined['Days in Center'] = (df_combined['Date Outcome'] - df_combined['Date Intake']).dt.days
+    
+#     # drop columns we don't need
+#     drop_columns=['Date Intake', 'Date Outcome']
+#     df_combined.drop(columns=drop_columns, inplace=True)
+    
+
     return df_combined
 
 
