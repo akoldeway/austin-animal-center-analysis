@@ -49,7 +49,7 @@ The Austin Animal Center is an open-intake facility where animals from all of Tr
 
 ![IntakesByBreed_percent](images/Intake_Type_by_Dog_Breed_percent.png)
 
-* Normalizing the data by intake reason shows the same relative percentage of breed for each intake reason.
+* Normalizing the data by intake reason shows the same relative percentage of breed for each intake reason with a slight increase in Pitbulls admitted for euthanasia and public assist.
 * This further supports that breed does not have an impact on intake reason.
 
 ## When is an animal most likely to be admitted to the Center?
