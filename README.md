@@ -69,7 +69,15 @@ The AAC's mission is to provide a live outcome of at least 90% of sheltered anim
 
 ![OutcomesByOutcomeType](images/outcomes_by_outcome_type.png)
 * A majority of all outcomes are considered "good" outcomes such as adoption, returned to owner or transfer to another shelter or foster home. With 91.69% reflecting those good outcomes, AAC is meeting their mission.
-* Despite being a no-kill shelter, nearly 7% of all outcomes result in euthanasia.
+* Despite being a no-kill shelter, nearly 7% of all outcomes result in euthanasia from 2013-2019. Austin adopted the No Kill policy in 2011 with a goal of saving more than 90% of animals brought into the center.
+* The center has a high pecentage of animals transfered due to programs like Austin Pets Alive. This is a significant contributor to how Austin in maintaining it's No Kill status.
+
+![DogEuthCond](images/outcome_euth_dog.png)
+* Over half of the animals with a euthanasia outcome were in normal condition indicating that the center may not have had enough reasources to serve all the animals taken in.
+
+![BreedCond](images/outcome_euth_breed.png)
+
+* Looking further into the euthanasia data, Pit Bulls also represent a larger overall portion of the dogs in normal condition that were euthanized. (55% of Euthanized Population vs. 12% of Intake Population)
 
 In a previous chart, we showed the number of intakes by month. We wondered if a similar pattern would be found in the number of outcomes.
 
@@ -89,3 +97,13 @@ The scatter plot is quite busy with a few hot spots, so let's take a look at the
 * For both cats and dogs, the average days spent in the center before climb from ages less than 1 year to 6 years.
 * Cats 15 years and older spend the longest time in the center before adoption.
 * Dogs 9-12 years spend the longest time in the center before adoption.
+
+![](images/dogs_adopted.png)
+* Mixed Breed dogs represent the largest population of dogs adopted. All of the top five breeds of dog are the same as intakes; however, there is a lower rate of adoption for Pit Bulls.
+
+![](images/dupes_by_breed.png)
+* All of the top five breeds are consitient with intake, again with Pit Bulls being returened the most often.
+
+### Does breed contribute to outcomes for Dogs?
+* If a dog is classified as a Pit Bull, it has a higher likely hood of being euthanized or returned and a lower likelyhood of being adopted; therefore, breed does impact the outcome for dogs.
+* It is also noteworthy that the same breeds appear in the top five for all breed analysis indicating that these breeds do not play an impact on the outcome of the dog, rather, they are the most common dog breeds in the shelter.
