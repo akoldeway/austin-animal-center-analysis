@@ -64,8 +64,14 @@ The Austin Animal Center is an open-intake facility where animals from all of Tr
 * A significant majority of all animals - over 87% - are brought to the center in a Normal condition.
 * A small number of animals - under 10% - are brought to the center likely requiring medical attention to do age, injury, illness or pregnancy.
 
+## Are there certain areas within Austin that have higher Stray intakes?
+![AustinMap](images/map.png)
+* Observing all the stray intake locations, it can be noted that there's mainly an evenly distribution of the places where the strays were found
+*  Some of the places with a higher density intake include areas that are located to main access roads such as South Congress, South East Austin and 183
+* Based on these locations, it can be noted that most of the households located in these areas are mainly non-famly type households which could be significant to abandonment of these strays.
+
 ## What are the outcomes for animals brought to the center?
-The AAC's mission is to provide a live outcome of at least 90% of sheltered animals through a variety of placement services. 
+The AAC's mission is to provide a live outcome of at least 90% of sheltered animals through a variety of placement services
 
 ![OutcomesByOutcomeType](images/outcomes_by_outcome_type.png)
 * A majority of all outcomes are considered "good" outcomes such as adoption, returned to owner or transfer to another shelter or foster home. With 91.69% reflecting those good outcomes, AAC is meeting their mission.
