@@ -67,8 +67,8 @@ The Austin Animal Center is an open-intake facility where animals from all of Tr
 ## Are there certain areas within Austin that have higher Stray intakes?
 ![AustinMap](images/map.png)
 * Observing all the stray intake locations, it can be noted that there's mainly an evenly distribution of the places where the strays were found
-*  Some of the places with a higher density intake include areas that are located to main access roads such as South Congress, South East Austin and 183
-* Based on these locations, it can be noted that most of the households located in these areas are mainly non-famly type households which could be significant to abandonment of these strays.
+*  Some of the places with a higher density intake include areas that are located to main access roads such as South Congress, South East Austin and US 183
+* Based on these locations, it can be noted that most of the households located in these areas are mainly non-family type households which could be significant to abandonment of these strays.
 
 ## What are the outcomes for animals brought to the center?
 The AAC's mission is to provide a live outcome of at least 90% of sheltered animals through a variety of placement services
